@@ -384,7 +384,7 @@ noBtn.addEventListener("mouseenter", () => {
     if (!canMove) return;
 
     // Only evade for first 2 attempts
-    if (noClickCount < 2) {
+    if (noClickCount < 5) {
 
         canMove = false;   // lock movement temporarily
 
@@ -394,7 +394,7 @@ noBtn.addEventListener("mouseenter", () => {
         // unlock after delay (slow down movement)
         setTimeout(() => {
             canMove = true;
-        }, 500);   // increase = slower escapes
+        }, 140);   // increase = slower escapes
     }
 });
 
@@ -405,7 +405,7 @@ noBtn.addEventListener("click", (e) => {
     noClickCount++;
 
     // First two clicks → escape
-    if (noClickCount <= 2) {
+    if (noClickCount <= 5) {
         moveNoRandom(true);
         setFunnyNoText();
         return;
@@ -430,15 +430,20 @@ noBtn.addEventListener("click", (e) => {
         });
 
         const funnyNoTexts = [
-            "This could be a mistake!",
-            "Think again 😶‍🌫️",
-            "Don’t do this to me 💔",
-            "Give it another thought!",
-            "Really? No?",
-            "Really sure ?",
-            "I will cry 😭",
-            "Please no 🥺",
-        ];
+    "Wait wait wait 😭",
+    "That wasn't the right button...",
+    "Are you sure about that?? 👀",
+    "My heart just skipped 😳",
+    "Try again... maybe YES this time?",
+    "I refuse to accept this outcome 😤",
+    "You almost hurt my feelings 🥺",
+    "Hmm... suspicious choice 🤨",
+    "Error 404: NO not allowed 😈",
+    "Plot twist incoming...",
+    "The YES button looks nicer tho 👀",
+    "You sure you clicked correctly? 😂"
+];
+
         let lastNoTextIndex = -1;
 
         function setFunnyNoText() {
@@ -529,3 +534,4 @@ noBtn.addEventListener("click", (e) => {
 </body>
 
 </html>
+
